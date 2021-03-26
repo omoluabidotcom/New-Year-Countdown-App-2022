@@ -1,8 +1,24 @@
 
+function formatTime(time) {
+
+    if (time < 10) {
+   
+           return '0'+time;
+       } else {
+   
+           return time;
+       }
+   }
+
+   const dayGet = document.getElementById('dayValue');
+   const hourGet = document.getElementById('hourValue');
+   const minGet = document.getElementById('minuteValue');
+   const secGet = document.getElementById('secondValue');
+
+   const newYearDate = "1 Jan 2022";
+
 function countdown() {
     
-    const newYearDate = "1 Jan 2022";
-
     const currentDate = new Date();
 
     const newYearEve = new Date(newYearDate);
@@ -19,29 +35,17 @@ function countdown() {
 
     const seconds = formatTime(Math.floor(conv) % 60);
 
-    
+    dayGet.innerHTML = days;
+    hourGet.innerHTML = hours;
+    minGet.innerHTML = minutes;
+    secGet.innerHTML = seconds;
 
-    document.write(days + ": " + hours +": " + minutes + ": " + seconds + "<br>");
+    // document.write(days + ": " + hours +": " + minutes + ": " + seconds + "<br>");
 
-    // document.write(hours+"<br>");
-
-    // document.write(minutes+"<br>");
-
-    // document.write(seconds+"<br>");  
-}
-
-
-function formatTime(time) {
-
- if (time < 10) {
-
-        return '0'+time;
-    } else {
-
-        return time;
-    }
 }
 
 countdown();
 
 setInterval(countdown, 1000)
+
+
