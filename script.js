@@ -1,4 +1,4 @@
-
+// Below is a function that format time 
 function formatTime(time) {
 
     if (time < 10) {
@@ -10,13 +10,16 @@ function formatTime(time) {
        }
    }
 
+   // Below the value of the day, years . hours and seconds is been grabbed and assigned to a variable.
    const dayget = document.getElementById('dayValue');
    const hourget = document.getElementById('hourValue');
    const minuteget = document.getElementById('minuteValue');
    const secondget = document.getElementById('secondValue');
 
+   //     Below a date is assigned as an expression to the variable
    const newYearDate = "1 Jan 2022";
 
+//    Below is a function that gets the what is left of the years from days, to hours, to minutes, to seconds.
 function countdown() {
     
     const currentDate = new Date();
@@ -40,12 +43,12 @@ function countdown() {
     minuteget.innerHTML = minutes;
     secondget.innerHTML = seconds;
 
-    // console.log(days + ": " + hours +": " + minutes + ": " + seconds + "<br>");
-
 }
 
+// Below the countdown function is called
 countdown();
 
+// Below is a function that changes value of the countdown function at interval of one seconds
 setInterval(countdown, 1000)
 
 
